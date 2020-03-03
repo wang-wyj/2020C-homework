@@ -1,30 +1,47 @@
 #include<stdio.h>
-int main(void)
+#define N 10
+int Readscore(int a[N],int b[N]);
+void swap(int*x,int*y);
+main()
 {
-	int n, nSum = 1;
-	scanf_s("%d", &n);
-	for (int n1 = 1, n2 = n1; n1 <= n / 2;)
-	{
-		if (nSum < n)
-		{
-			n2++;
-			nSum += n2;
-		}
-		else if(nSum > n)
-		{
-			nSum -= n1;
-			n1++;
-		}
-		else
-		{
-			for (int t = n1; t <= n2; t++)
-			{
-				printf("%d,", t);
-			}
-			printf("\n");
-			n2++;
-			nSum += n2;
-		}
-	}
-	return 0;
+int a[N],b[N];
+int i,j;
+Readscore(a,b);
+for(i=0;i<10;i++)
+{
+swap(&a[i],&b[i]);
 }
+for(i=0;i<10;i++)
+{
+printf(" %d",a[i]);
+}
+printf("\n");
+for(j=0;j<10;j++)
+{
+printf(" %d",b[j]);
+}
+
+}
+int Readscore(int a[N],int b[N])
+{
+int i,j;
+printf("please input score");
+for(i=0;i<10;i++)
+{
+scanf("%d",&a[i]);
+}
+printf("\n");
+for(j=0;j<10;j++)
+{
+scanf("%d",&b[j]);
+}
+}
+void swap(int*x,int*y)
+{
+int temp;
+temp=*x;
+*x=*y;
+*y=temp;
+
+}
+
